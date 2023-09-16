@@ -1,5 +1,62 @@
-The task is to find the shortest path through a 2D dungeon to unlock and retrieve a treasure.
+Objective:
+
+The objective is to find the shortest path through a 2D dungeon to unlock and retrieve a treasure.
 This will involve creating a graph data structure from the text representation of a dungeon. Once
 the dungeon is converted to a graph, graph algorithms can be applied and the problem becomes more
 familiar.
+
+Task 1: Creating a Graph from the Dungeon File
+
+To enable the search for the shortest path, a graph structure must be created from the given text
+representation of a 2D dungeon.
+
+Dungeon Representation
+
+The dungeon will be read from a text file. Each file will contain a single dungeon only. The basic
+dungeon is represented by the following character tile types:
+• E – Entrance. There will only be one entrance to a dungeon.
+• # – Wall. It is not possible to “walk” through a wall. These tiles should not be included in the
+graph.
+• . (period) – Empty tile. These tiles can be walked over and may form part of a path. When
+creating the graph, consider tiles that are up, down, left and right of an empty tile to create the
+necessary edges.
+• K – Key. The key unlocks the treasure, and must be collected (i.e. visited) before the treasure
+can be retrieved. The key can be walked over, just like an empty tile.
+• T – Treasure. The treasure can be collected by visiting this tile after the key has been retrieved.
+The treasure can be walked over, just like an empty tile.
+Consider the following example dungeon, further referred to as Dungeon 1 in this document:
+######
+E....#
+#.##T#
+#.K..#
+######
+The dungeon can be entered and exited via the ’E’ tile. To get the treasure, you must navigate to the
+’K’ tile first, and then make your way to the ’T’ tile. Once you have visited both ’K’ and ’T’, you can
+exit the dungeon by returning to the ’E’ tile. Navigating the dungeon can be done in 4 directions:
+left, right, up, and down. It is not possible to navigate diagonally.
+The supplied dungeon file may contain white space before or after the dungeon. You can assume the
+dungeon map to always be rectangular
+
+
+Task 2:
+
+Implement an algorithm to find the shortest path from the entrance of the
+dungeon to the key, from the key to the treasure, and from the treasure back to the entrance. Assume
+that each dungeon has only one entrance, key, and treasure, and that every edge has a weight of 1.
+
+If multiple paths of the same length (i.e. total weight) exist, assume that the following directional
+preference applies: left, up, right, down. I.e., if two paths starting from a tile have the same length,
+then the path that begins with a left step should be preferred to a path that begins with an up step,
+up should be preferred to right, and right should be preferred to down. 
+HINT: since each node in the graph is identified by the coordinates, a comparison between the current node’s coordinates and
+the coordinates of the adjacent nodes will help you to easily determine the relative location of the
+adjacent nodes (left, right, up, down) without storing any additional information.
+Consider the following example dungeon (Dungeon 2):
+######
+E....#
+#...T#
+#.K..#
+######
+The shortest path from ’E’ to ’K’ that should be reported is “right, right, down, down”, i.e.
+(1,0),(1,1),(1,2),(2,2),(3,2)
 
