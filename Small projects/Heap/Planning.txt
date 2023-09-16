@@ -1,0 +1,20 @@
+insert MinHeap:
+1. insert to left most node
+2. check if parent > NewNode, until newNode is root.s
+	2.1. if so swap parent and NewNode and repeat 2.
+	2.2. if not then leave it.
+ 
+removeMin():
+1. replace root with last el, thats if capacity>1
+
+2. check if r has atleast 1 child
+	2.1. if so proceed to (3).
+	2.2. if not then done
+
+3. check if children are smaller.
+	check if children exist first.
+	no children then return.
+	3.1. if yes, check if children are equal.
+		3.1.1. if so swap with left child
+	3.2. if yes, swap with smallest child
+	  

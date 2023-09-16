@@ -1,0 +1,29 @@
+Insert:
+
+last:
+	1.start at top level.
+	2.iterate until last element is found.
+	 (i) if last elements next[i]=null. save the node.
+	 (ii) go down a level and check if next[i-1]=null.
+	 (iii)repeat i 
+	 
+	3. if next[i] != null
+	 (i) save next[i] node. 
+	 (ii)repeat 2
+
+search:
+	1.start at top level.
+	2. Each level iterate until node found.
+		(1).node found
+		(2).cur>target
+		(3).cur<target but next null.
+	3. if cur>target
+		(1) got to previous node
+		(2) go down one level  
+		(3) repeat 2.
+	4. if cur<target but next null.
+		(1) got to previous node
+		(2) go down one level 
+		(3) if curlvl is 0 then its the end of list and element cannot be found.
+
+insert:
