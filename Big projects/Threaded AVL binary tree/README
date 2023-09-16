@@ -1,1 +1,30 @@
+Objectives:
+This assignment aims to learn how to implement different types of a Threaded AVL binary
+tree and to traverse them without using a stack or a recursion.
+
+The first task is to implement an AVL Tree that can be used to store data and re-balance it to
+achieve O(log N) time complexity.
+The second task is to convert the AVL Tree to a Threaded AVL Tree. 
+
+
+AVL Tree
+
+An AVL tree is one in which the height of the left and right subtrees of every node differs
+by at most one. In other words, AVL Tree is a height-balanced binary tree. Each node is
+associated with a balanced factor which is calculated as the difference between the height
+of its left subtree and the right subtree. AVL is most applicable in scenarios where search
+operation is more frequent compared to insertion and deletion. Detailed background and
+examples of AVL can be found on pages 261 to 267 of the textbook.
+In this assignment, a threaded AVL will be implemented. What is Threaded AVL? In
+the linked representation of binary trees, more than one-half of the link fields contain NULL
+values which results in wastage of storage space. If a binary tree consists of “n” nodes
+then “n+1” link fields contain NULL values. So, in order to effectively manage the space,
+a method was devised by Perlis and Thornton in which the NULL links are replaced with
+special links known as threads. Such binary trees with threads are known as threaded binary
+trees. A binary tree is made threaded by making all right child pointers that would normally
+be a NULL point to the in-order successor of the node (if it exists) for a single threaded, or
+both left and right NULL pointers are made to point to in-order predecessor and in-order
+successor respectively.
+Moreover, the idea of threaded binary trees is to make in-order traversal faster and do it
+without stack and without recursion.
 
