@@ -1,1 +1,5 @@
+The task is to find the shortest path through a 2D dungeon to unlock and retrieve a treasure.
+This will involve creating a graph data structure from the text representation of a dungeon. Once
+the dungeon is converted to a graph, graph algorithms can be applied and the problem becomes more
+familiar.
 
