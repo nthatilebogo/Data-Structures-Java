@@ -1,5 +1,5 @@
 # Data-Structures-Java
-This GitHub repository hosts a collection of data structures and algorithms implemented in Java. These projects originated from university coursework, emphasizing the fundamental concept of data abstraction in software design and efficiency.
+This GitHub repository hosts a collection of data structures and algorithms implemented in Java. These projects originated from University of Pretoria course module COS212, emphasizing the fundamental concept of data abstraction in software design and efficiency.
 
 Key Features:
 
