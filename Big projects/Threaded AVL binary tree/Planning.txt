@@ -1,0 +1,110 @@
+help functions:
+balance factor calc
+insert node func
+
+
+calcuate balance factor function:
+1. get height of left child and right child
+2. if no left or right then set height of that side to 0.
+3. calculate h(right)-h(left)
+	3.1. if result>1 OR result<-1, then save and return node.
+
+Insert node:
+update height:
+1. start at root find parent of n.
+2. if height equal then parent.height++;
+3. then n = parent;
+4. calculate balance factor each visited node.
+	4.1.if result>1 OR result<-1, then save and return node.
+
+Case 1:
+	n.left.data > nNode.data
+	
+	1. find parent
+	2. rotate left child about unbalanced node.
+	3. update height of nodes
+		3.1. unbalanced node has no right child and left child of n has no right child
+			3.1.1. decrement height of n.
+		3.2. unbalanced node has right child and left child of n hasright child
+			3.2.1. decrement height of n.
+
+ right child 
+
+Case 4:
+	n.right.data < nNode.data	
+
+	1. find parent
+	2. rotate right child about unbalanced node.
+	3. update height of nodes
+		3.1. unbalanced node has no left child
+			3.1.1. decrement height of n.
+		3.2. unbalanced node has left child and right child of n has left child
+			3.2.1. decrement height of n.
+
+Case 2:
+	n.left.data < nNode.data
+
+	1. find parent
+	2. 2 rotations
+		2.1. rotate n.left.right about n.left .
+		2.2. rotate n.left about n .
+	3. update height of nodes
+		3.1. unbalnced node has no right child
+			3.1.1. decrement height of child and parent-=2.
+			3.1.2. increment height of grandchild.
+		3.2. unbalanced node has right child and left child of n
+			3.2.1. decrement height of child and parent-=2.
+			3.1.2. increment height of grandchild.
+
+	
+Case 3:
+	n.right.data > nNode.data
+
+	1. find parent
+	2. 2 rotations
+		2.1. rotate n.right.left about n.right .
+		2.2. rotate n.right about n .
+	3. update height of nodes
+		3.1. unbalnced node has no left child
+			3.1.1. decrement height of parent and grandparent-=2.
+			3.1.2. increment height of child.
+		3.2. unbalanced node has left child and rightt child of n
+			3.2.1. decrement height of parent and grandparent-=2.
+			3.2.2. increment height of child.
+
+Remove node:
+Delete by copy
+1.find node to be deleted.
+2.find pedecessor of deleted node.
+3.Disconnect predecessor
+4.predecessor replaces dNode
+4. return parent of deleted node. 
+	1.after delete, from parent of deleted node
+		1.1. go up and update HEIGHT OF NODEs. 
+		1.2. if the updated node is does not need to be updated then its other child has a bigger height.
+  	2. if there is unbalanced node find case and perform rotation.
+
+
+idea of updating height after rotation
+
+case 1: if child.height < unbalanced_node.height by 1
+	1. update height of unbalanced node.
+Case 2: if child.height < unbalanced_node.height by x>2
+	1.swap heights of trees
+	
+
+Error:
+Assignment Task 1.1 
++Remove debugging code
++Height is one extra than what is expected
+
+Assignment Task 1.2
+Exception in thread "main" java.lang.NullPointerException
+    at AvlTree.update_d(AvlTree.java:315)
+    at AvlTree.removeNode(AvlTree.java:69)
+
++Null pointer exception
++Remove debugging code
+
+General
++Add suppress warnings above class. Check practical-faq for more info
